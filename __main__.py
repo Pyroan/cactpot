@@ -71,3 +71,11 @@ if __name__ == "__main__":
         if row_averages[i] == max(row_averages):
             board.highlight_row(i, Style.BRIGHT+Fore.GREEN)
     board.draw(row_averages)
+    print("Median Payouts:")
+    row_medians = [sorted(payouts[str(b.analyze_rows()[i])] for b in possible_boards)[
+        len(possible_boards)//2]for i in range(8)]
+    board = Board(board_str)
+    for i in range(len(row_medians)):
+        if row_medians[i] == max(row_medians):
+            board.highlight_row(i, Style.BRIGHT+Fore.GREEN)
+    board.draw(row_medians)
