@@ -1,6 +1,4 @@
-from colorama import Fore, Style, just_fix_windows_console
-
-just_fix_windows_console()
+from colorama import Fore, Style
 
 
 class Board:

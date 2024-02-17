@@ -4,9 +4,13 @@ import json
 import re
 from collections import Counter
 
-from colorama import Fore, Style
+from colorama import Fore, Style, just_fix_windows_console
 
+import simulator
 from board import Board
+
+just_fix_windows_console()
+
 
 with open('config.json') as f:
     config = json.load(f)
@@ -50,6 +54,8 @@ def generate_possible_boards(board: str) -> list[Board]:
 
 
 if __name__ == "__main__":
+    simulator.run_sim()
+    exit()
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'board', type=str, help="A 9-character string representing a cactpot board. Values ordered lexicographically. Replace unknown values with `?` e.g. '12??5???9'")
